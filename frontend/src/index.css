@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light dark; }
+body { @apply bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100; }
+.card { @apply rounded-2xl shadow-sm border border-slate-200 bg-white dark:bg-slate-800; }
+.card-pad { @apply p-4 md:p-6; }
