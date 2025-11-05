@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body { @apply min-h-screen bg-slate-950 text-slate-100 font-sans antialiased; background-image: radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.2), transparent 55%), radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.2), transparent 60%); }
+#root { @apply min-h-screen; }
+.card { @apply rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur shadow-lg; }
+.card-pad { @apply p-4 md:p-6; }
+.gradient-card { @apply rounded-3xl text-white shadow-lg overflow-hidden relative; }
+.gradient-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.15), transparent, rgba(255,255,255,0.25));
+  opacity: 0.4;
+}
+.pill { @apply inline-flex items-center gap-2 rounded-full px-4 py-1 text-xs font-medium uppercase tracking-wide bg-white/10 text-white/80; }
+.section-title { @apply text-2xl font-semibold text-white; }
+.section-subtitle { @apply text-sm text-slate-300; }
