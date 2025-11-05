@@ -19,7 +19,7 @@ export default function Monitoring() {
           <div className="pill bg-sky-500/20 text-sky-200">Monitoring Hasil</div>
           <h2 className="mt-2 text-3xl font-semibold text-white">Monitoring Operasional</h2>
           <p className="mt-1 text-sm text-slate-400 max-w-2xl">
-            Pantau kinerja kebun, pabrik, dan perusahaan secara real-time. Gunakan tab di bawah ini untuk menggali metrik spesifik setiap lini bisnis.
+            Silahkan Pantau kinerja kebun, pabrik, dan perusahaan secara real-time. Gunakan tab di bawah ini untuk menggali metrik spesifik setiap lini bisnis.
           </p>
         </div>
       </div>
