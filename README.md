@@ -863,26 +863,6 @@ jobs:
 * Frontend: `cd frontend && npm install && npm run dev`
 * ENV frontend: buat `.env` (opsional) berisi `VITE_API_BASE=http://localhost:8000`
 
-### Generate Data Contoh ke Google Sheets
-
-Gunakan skrip utilitas berikut untuk mengisi spreadsheet dengan data dummy sesuai skema yang dipakai backend:
-
-```bash
-export GOOGLE_SHEETS_CREDENTIALS_BASE64=... # isi sesuai environment backend
-export PLANTATION_SHEET_ID=...
-export FACTORY_SHEET_ID=...
-export COMPANY_SHEET_ID=...
-python backend/scripts/generate_sample_data.py
-```
-
-Skrip akan:
-
-* membuat worksheet jika tab belum ada,
-* membersihkan data lama,
-* menulis ulang ±45 hari data kebun, 30 hari data pabrik, dan 12 bulan agregat perusahaan.
-
-Pastikan service account sudah memiliki akses Editor pada setiap sheet sebelum menjalankan skrip.
-
 ### Prediksi Panen
 
 * Endpoint: `POST /predict/harvest`

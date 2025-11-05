@@ -10,6 +10,7 @@ type Props = {
 
 export default function BarChartCard({ title, data, xKey, yKey }: Props) {
   const gradientId = `${yKey}-gradient`;
+
   return (
     <div className="card card-pad">
       <div className="text-sm uppercase tracking-wide text-slate-400">{title}</div>
@@ -17,11 +18,23 @@ export default function BarChartCard({ title, data, xKey, yKey }: Props) {
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="4 4" stroke="rgba(148, 163, 184, 0.15)" />
-            <XAxis dataKey={xKey} stroke="rgba(148, 163, 184, 0.4)" tick={{ fill: 'rgba(226, 232, 240, 0.7)', fontSize: 12 }} />
-            <YAxis stroke="rgba(148, 163, 184, 0.4)" tick={{ fill: 'rgba(226, 232, 240, 0.7)', fontSize: 12 }} />
+            <XAxis
+              dataKey={xKey}
+              stroke="rgba(148, 163, 184, 0.4)"
+              tick={{ fill: 'rgba(226, 232, 240, 0.7)', fontSize: 12 }}
+            />
+            <YAxis
+              stroke="rgba(148, 163, 184, 0.4)"
+              tick={{ fill: 'rgba(226, 232, 240, 0.7)', fontSize: 12 }}
+            />
             <Tooltip
               cursor={{ fill: 'rgba(59, 130, 246, 0.1)' }}
-              contentStyle={{ background: '#0f172a', borderRadius: '0.75rem', border: '1px solid rgba(148, 163, 184, 0.2)', color: '#e2e8f0' }}
+              contentStyle={{
+                background: '#0f172a',
+                borderRadius: '0.75rem',
+                border: '1px solid rgba(148, 163, 184, 0.2)',
+                color: '#e2e8f0'
+              }}
             />
             <Bar dataKey={yKey} radius={[12, 12, 0, 0]} fill={`url(#${gradientId})`} />
             <defs>
