@@ -21,7 +21,11 @@ class SheetClient:
         except SpreadsheetNotFound:
             logger.warning("Spreadsheet '%s' not found or inaccessible", sheet_id)
             return []
+
         try:
+            print("=== Available worksheets ===")
+            print([ws.title for ws in sh.worksheets()])   # 🟢 Debug info
+            print("=== Looking for tab:", tab_name, "===")
             ws = sh.worksheet(tab_name)
         except WorksheetNotFound:
             available = [ws.title for ws in sh.worksheets()]
@@ -36,13 +40,17 @@ class SheetClient:
         rows = ws.get_all_records()
         return rows
 
+
 sheets = SheetClient()
+
 
 def get_plantation():
     return sheets.read_records(settings.plantation_sheet_id, settings.plantation_tab)
 
+
 def get_factory():
     return sheets.read_records(settings.factory_sheet_id, settings.factory_tab)
+
 
 def get_company():
     return sheets.read_records(settings.company_sheet_id, settings.company_tab)
