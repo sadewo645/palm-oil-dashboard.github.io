@@ -23,9 +23,11 @@ class SheetClient:
             return []
 
         try:
+            # Tambahan debug opsional untuk membantu jika tab tidak ditemukan
             print("=== Available worksheets ===")
-            print([ws.title for ws in sh.worksheets()])   # 🟢 Debug info
+            print([ws.title for ws in sh.worksheets()])
             print("=== Looking for tab:", tab_name, "===")
+
             ws = sh.worksheet(tab_name)
         except WorksheetNotFound:
             available = [ws.title for ws in sh.worksheets()]
